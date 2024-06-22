@@ -17,8 +17,8 @@ class UserController extends Controller
          $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'dob' => 'required|date', // Ensure dob is validated as a date
+            'password' => 'required|string|min:6',
+            'dob' => 'required|date',
         ]);
 
         if ($validator->fails()) {
